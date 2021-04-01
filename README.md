@@ -1,6 +1,9 @@
 ## A Basic Document Scanner
 A basic document scanner that scans an image an produces a better readable form of it,using OpenCV and Python
 
+# Final Result
+
+
 # Table of Contents
 - General Info
 - Libraries Used
@@ -19,6 +22,8 @@ A document scanner can be build using basic image processing techniques, inorder
 - OpenCV
 - Python3
 - Scikit-image
+- Tkinter
+- PIL
 
 # End Product
 I have added an scanned result.

@@ -40,7 +40,7 @@ def open_img():
 
         panelB = Label(image=scanned)
         panelB.image = scanned
-        panelB.pack(side="left",padx=10, pady=10)
+        panelB.pack(side="right",padx=10, pady=10)
     
     else:
         panelA.configure(image=image)
@@ -51,7 +51,7 @@ def open_img():
 panelA = None
 panelB = None
 btn = Button(root, text ='Select an Image', command = open_img)
-btn.pack(side="bottom",fill="both", expand="yes", padx="10", pady="10")
+btn.pack(side="bottom", fill="both", expand="yes", padx="10", pady="10")
 
 
 root.title("Document Scanner Using OpenCV") 
