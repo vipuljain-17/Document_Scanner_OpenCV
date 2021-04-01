@@ -2,7 +2,7 @@
 A basic document scanner that scans an image an produces a better readable form of it,using OpenCV and Python
 
 # Final Result
-
+![Alt Final Result](https://github.com/vipuljain-17/Document_Scanner_OpenCV/blob/master/Middle%20steps%20images/FINAL_RESULT.png?raw=True)
 
 # Table of Contents
 - General Info
