@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import tkinter
-from tkinter.filedialog import askopenfilename
-from tkinter import Button, Label
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter import Button, Label,messagebox
 from PIL import ImageTk, Image
 import cv2
 from Document_scanner import scanner
@@ -27,6 +27,10 @@ def open_img():
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image = cv2.resize(image, (600,600), interpolation=cv2.INTER_NEAREST)
 
+    #return scanned_image
+    global return_file
+    return_file = scanned
+
     image = Image.fromarray(image)
     scanned = Image.fromarray(scanned)
 
@@ -47,12 +51,25 @@ def open_img():
         panelB.configure(image=scanned)
         panelA.image = image
         panelB.image = scanned
+    
+def save_img(image_file):
+    if image_file is not None:
+        save_path = asksaveasfilename(title = "Give Title", filetypes =[('Image File', '*.jpg')])
+        #print(save_path)
+        #print(image_file.shape)
+        cv2.imwrite(save_path, image_file)
+    else:
+        messagebox.showerror("Show error", "No Input image was selected")
 
 panelA = None
 panelB = None
-btn = Button(root, text ='Select an Image', command = open_img)
-btn.pack(side="bottom", fill="both", expand="yes", padx="10", pady="10")
+return_file = None
 
+btn2 = Button(root, text ='Save the scanned Image', command = lambda: save_img(return_file))
+btn2.pack(side="bottom", fill="both",expand = 'yes', padx="10", pady="10")
+
+btn = Button(root, text ='Select an Image', command = lambda: open_img())
+btn.pack(side="bottom", fill="both", expand="yes", padx="10", pady="10")
 
 root.title("Document Scanner Using OpenCV") 
 #root.geometry("700x700")
