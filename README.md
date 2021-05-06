@@ -6,6 +6,7 @@ A basic document scanner that scans an image an produces a better readable form 
 
 # Table of Contents
 - General Info
+- Installing and running the project on local machine
 - Libraries Used
 - End Product
 - References 
@@ -17,6 +18,29 @@ A document scanner can be build using basic image processing techniques, inorder
 1. Detect the edge
 2. Use the edges in the image to find the contour (outline) representing the piece of paper being scanned.
 3. Apply a perspective transform to obtain the top-down view of the document.
+
+# Installing and running the project on local machine
+Clone the project
+```
+git clone https://github.com/vipuljain-17/Document_Scanner_OpenCV.git
+```
+Go to the project directory
+```
+cd Document_Scanner_OpenCV
+```
+Run the shell script to install required packages and start the program.
+```
+./run.sh
+```
+
+- If you face any permission errors while running the shell script. Write the given code.
+  ```
+  chmod +x run.sh
+  ```
+  This provides you with the execution rights in order to run the script.
+
+
+Or, Just click on the run.sh file!
 
 # Libraries Used
 - OpenCV
